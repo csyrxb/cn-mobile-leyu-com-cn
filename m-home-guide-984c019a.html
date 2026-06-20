@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雨燕直播 · 对照与查询</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f7f7fb;
+      color: #1e1e2a;
+      line-height: 1.65;
+    }
+
+    a {
+      color: #2b5f8a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: #0f3b5c;
+    }
+
+    .hero {
+      background: #0d1b2a;
+      background-image: radial-gradient(ellipse at 70% 30%, #1b3a4b 0%, #0a1621 100%);
+      color: #dfeaf0;
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+    .hero h1 span {
+      font-weight: 550;
+      color: #b5d6ed;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 1.2rem auto 0;
+      font-size: 1.1rem;
+      color: #c0d3e2;
+      line-height: 1.7;
+    }
+    .hero .tagline {
+      display: inline-block;
+      margin-top: 1.8rem;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      color: #cce0ef;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 400;
+      border-bottom: 1px solid #d6dce8;
+      padding-bottom: 0.6rem;
+      margin: 3.2rem 0 1.8rem;
+      color: #1f2c3c;
+    }
+    .section-title:first-of-type {
+      margin-top: 1.2rem;
+    }
+
+    .grid-advantage {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem 1.8rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.04);
+      transition: box-shadow 0.15s ease;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+      color: #1e2c3e;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #3a465a;
+    }
+
+    .scenario-list {
+      list-style: none;
+      margin: 1rem 0 2.2rem;
+    }
+    .scenario-list li {
+      padding: 0.6rem 0 0.6rem 1.5rem;
+      position: relative;
+      border-bottom: 1px solid #eaeef4;
+    }
+    .scenario-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #3f6b8c;
+    }
+    .scenario-list li strong {
+      font-weight: 500;
+      color: #1f3143;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin: 1.8rem 0 2.2rem;
+    }
+    .faq-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .faq-item .q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #16212e;
+    }
+    .faq-item .a {
+      font-size: 0.92rem;
+      color: #3f4e61;
+      line-height: 1.6;
+    }
+
+    .footnote-area {
+      margin-top: 4rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d6dce8;
+      font-size: 0.9rem;
+      color: #3b4a5c;
+      text-align: center;
+    }
+    .footnote-area p {
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero {
+        padding: 3.5rem 1.5rem 3rem;
+      }
+      .container {
+        padding: 1.5rem 1rem 4rem;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>对照 · 查询 · <span>雨燕直播</span></h1>
+    <p>
+      日常信息流里，你或许需要一处可以反复比对、安静延伸的地方。<br>
+      我们试着从观看与记录之间，找到一种更自然的节奏。
+    </p>
+    <div class="tagline">持续积累 · 克制表达</div>
+  </section>
+
+  <div class="container">
+
+    <h2 class="section-title">为什么需要不一样的参照</h2>
+    <div class="grid-advantage">
+      <div class="card">
+        <h3>多线对照</h3>
+        <p>同一时间不同来源的内容并列呈现，适合需要反复核实、对比细节的时刻。</p>
+      </div>
+      <div class="card">
+        <h3>片段延伸</h3>
+        <p>看到某个节点或话题，可以快速展开相关背景，不必跳转到陌生页面重新查找。</p>
+      </div>
+      <div class="card">
+        <h3>记录而非引导</h3>
+        <p>页面只陈列信息，不设置强烈指向，把判断和选择留给你自己。</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">常见使用场景</h2>
+    <ul class="scenario-list">
+      <li><strong>信息比对</strong> — 同时浏览多个来源的同一事件表述，发现差异与共性。</li>
+      <li><strong>话题回溯</strong> — 从某一段内容出发，查看前因后果或延伸讨论，而非只看单一结论。</li>
+      <li><strong>安静浏览</strong> — 没有弹窗、倒计时或催促提示，适合需要集中注意力的时段。</li>
+      <li><strong>日常收集</strong> — 把自己感兴趣的内容暂时留存，之后再做判断或整理。</li>
+    </ul>
+
+    <h2 class="section-title">FAQ 摘要 · 几个常见疑问</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="q">这里和直接搜索有什么不同？</div>
+        <div class="a">我们更侧重「对照」与「延伸」——同一页面里展示多组信息，并提供上下文链接，减少反复切换的成本。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">内容更新频率如何？</div>
+        <div class="a">根据信息源的自然节奏更新，不追求实时，但保证有积累价值。具体可留意页面底部的记录时间。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">是否鼓励长时间停留？</div>
+        <div class="a">不刻意。你可以快速对照后离开，也可以慢慢延伸阅读，页面不会干预你的节奏。</div>
+      </div>
+    </div>
+
+    <p style="margin: 2rem 0 1rem; font-size: 0.96rem;">
+      更多沉淀与记录，可前往 <a href="https://m-home-yuyan.com">雨燕直播</a> 查看完整页面。我们尽量保持克制的信息密度，不主动推送，也不夸大任何效果。
+    </p>
+
+    <div class="footnote-area">
+      <p>基于日常查询与对照习惯设计 · 版本 2025.04</p>
+      <p>页面内容仅供参考，不构成任何建议或承诺</p>
+    </div>
+
+  </div>
+</body>
+</html>
