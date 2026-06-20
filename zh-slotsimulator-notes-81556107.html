@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>老虎机模拟器 · 信息卡片介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf9f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.65;
+      color: #1f2a3a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* hero / 主视觉 */
+    .hero {
+      margin-bottom: 2.8rem;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 1px solid #e3ded8;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1a232f;
+      margin-bottom: 0.35rem;
+      line-height: 1.2;
+    }
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #5c677d;
+      font-weight: 380;
+      margin-top: 0.15rem;
+    }
+
+    /* 通用卡片 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2rem 0 2.2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.02);
+      border: 1px solid #efebe7;
+      transition: box-shadow 0.15s ease;
+    }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.03);
+    }
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.9rem;
+      color: #1e2a3a;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card h2 span {
+      display: inline-block;
+      margin-right: 0.15rem;
+      opacity: 0.7;
+    }
+    .card p {
+      margin-bottom: 0.9rem;
+      font-size: 1rem;
+      color: #2d384a;
+    }
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 用途卡片 — 三栏小标签 */
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+    .purpose-item {
+      background: #f3f0ec;
+      border-radius: 14px;
+      padding: 0.9rem 0.6rem;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 420;
+      color: #1f2a3c;
+      line-height: 1.3;
+      transition: background 0.1s;
+    }
+    .purpose-item small {
+      display: block;
+      font-weight: 380;
+      font-size: 0.8rem;
+      color: #5d6b80;
+      margin-top: 0.2rem;
+    }
+
+    /* 适合人群 — 圆点列表 */
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin: 0.4rem 0 0.2rem;
+      list-style: none;
+      padding: 0;
+    }
+    .audience-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.98rem;
+      color: #2b364a;
+    }
+    .audience-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: #8a7f72;
+    }
+
+    /* 自然链接段落 (单独) */
+    .link-block {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin: 1.8rem 0 2.2rem;
+      border: 1px solid #efebe7;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+    }
+    .link-block p {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+    .link-block p:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: #2c577a;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s, color 0.1s;
+    }
+    a:hover {
+      border-bottom-color: #2c577a;
+      color: #16344d;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      margin: 2rem 0 1.2rem;
+      border-top: 1px solid #e3ded8;
+      padding-top: 1.8rem;
+    }
+    .faq-mini h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #1f2a3a;
+    }
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #1f2a3a;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item p {
+      font-size: 0.92rem;
+      color: #4d5a6e;
+      margin-left: 0.2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e6dfd8;
+      margin: 1.8rem 0;
+    }
+    .footer-note {
+      font-size: 0.85rem;
+      color: #7a879a;
+      text-align: center;
+      margin-top: 2.2rem;
+      border-top: 1px solid #eae4dd;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 560px) {
+      body {
+        padding: 1.8rem 1rem 2.5rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+      .link-block {
+        padding: 1.4rem 1.2rem;
+      }
+      .purpose-grid {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+      }
+      .audience-list {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero / 主视觉 -->
+  <div class="hero">
+    <h1>老虎机模拟器</h1>
+    <div class="sub">了解规则 · 对比策略 · 安静查阅</div>
+  </div>
+
+  <!-- 信息卡片：用途卡片 -->
+  <div class="card">
+    <h2><span>📋</span> 日常查询与对照</h2>
+    <p>无论你是刚接触老虎机的新手，还是想回顾特定机制的老玩家，一个清晰、无压力的查阅环境总是有用的。下面几种场景你可能并不陌生：</p>
+    <div class="purpose-grid">
+      <div class="purpose-item">
+        快速回顾规则
+        <small>赔付线、特殊符号、奖励回合</small>
+      </div>
+      <div class="purpose-item">
+        对比不同设定
+        <small>多版本参数并列参考</small>
+      </div>
+      <div class="purpose-item">
+        延伸阅读
+        <small>搭配术语与概率说明</small>
+      </div>
+    </div>
+    <p style="margin-top: 1rem; font-size: 0.96rem; color: #475468;">不需要注册或下载，打开页面即可对照查阅。你可以把这里当作一个安静的资料台。</p>
+  </div>
+
+  <!-- 适合人群 卡片 -->
+  <div class="card">
+    <h2><span>👤</span> 适合谁使用</h2>
+    <ul class="audience-list">
+      <li>希望理解基本规则与符号含义的学习者</li>
+      <li>想比较不同赔率表或奖励机制的爱好者</li>
+      <li>在撰写内容时需要参考机制描述的写作者</li>
+      <li>偶尔放松、不追求速成技巧的普通浏览者</li>
+    </ul>
+    <p style="margin-top: 1rem; font-size: 0.96rem; color: #475468;">页面内容保持中立，不鼓励过度投入，只提供信息本身。</p>
+  </div>
+
+  <!-- 自然链接段落 -->
+  <div class="link-block">
+    <p>如果你需要一个结构清晰、可随时查阅的老虎机资料页面，可以花几分钟看看 <a href="https://zh-slotsimulator.com">老虎机模拟器</a>。它把常见规则、符号组合和奖励逻辑整理在一起，方便你随时对照。</p>
+    <p>页面没有催促或诱导，只是把信息陈列出来。你可以在了解细节后，再决定是否深入。内容保持平实，适合慢慢翻看。</p>
+  </div>
+
+  <!-- FAQ 摘要 (非完整FAQ，只呈现常见问题片段) -->
+  <div class="faq-mini">
+    <h3>一些常见疑问 · 摘要</h3>
+    <div class="faq-item">
+      <strong>模拟器能代替实际游戏吗？</strong>
+      <p>不能。这里只提供机制说明和参数对照，不模拟真实投注过程，也不涉及金钱或奖励。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否需要联网或安装？</strong>
+      <p>直接通过浏览器打开页面即可，无需下载。所有内容均为静态展示。</p>
+    </div>
+    <div class="faq-item" style="margin-bottom: 0.1rem;">
+      <strong>内容会频繁更新吗？</strong>
+      <p>页面会定期调整表述和结构，但核心信息保持稳定。你可以把它当作一个安静的参考点。</p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer-note">
+    本页为信息介绍 · 内容仅作参考 · 保持克制与开放
+  </div>
+
+</div>
+</body>
+</html>
