@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>说球帝 · 站点介绍</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #faf7f2;
+            font-family: "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", "Times New Roman", serif;
+            color: #2e2b28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 3rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 0 2.5rem;
+            border-bottom: 1px solid #e3ddd5;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #3f362f;
+            margin-bottom: 0.4rem;
+        }
+        .hero .subhead {
+            font-size: 1.15rem;
+            color: #7a6f65;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0.8rem auto 0;
+            font-weight: 400;
+        }
+
+        /* 区块通用 */
+        section {
+            margin-top: 2.8rem;
+        }
+        h2 {
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: #3f362f;
+            border-left: 4px solid #b8a38a;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 1.2rem 0 0.4rem;
+            color: #4d4139;
+        }
+        p {
+            margin-bottom: 1.1rem;
+        }
+
+        /* 引用块 / 提示框 */
+        .insight-box {
+            background: #f0ebe4;
+            border-left: 5px solid #a48d78;
+            padding: 1.3rem 1.6rem;
+            margin: 1.8rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.97rem;
+        }
+        .insight-box strong {
+            color: #3f362f;
+        }
+
+        /* 特点卡片（两列） */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.3rem;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.2rem 1.3rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #ece5dc;
+        }
+        .feature-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4d4139;
+            margin-bottom: 0.2rem;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #5e554b;
+            margin-bottom: 0;
+        }
+
+        /* FAQ 精简 */
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+        .faq-item .q {
+            font-weight: 600;
+            color: #3f362f;
+        }
+        .faq-item .a {
+            margin-left: 1.2rem;
+            color: #5e554b;
+        }
+
+        /* 底部链接区 */
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e3ddd5;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #7a6f65;
+        }
+        .footer-links a {
+            color: #5e4c3b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c9b9a7;
+            font-weight: 500;
+        }
+        .footer-links a:hover {
+            color: #2e2b28;
+            text-decoration-color: #2e2b28;
+        }
+        .small-note {
+            font-size: 0.82rem;
+            color: #9b9085;
+            margin-top: 0.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>说球帝</h1>
+        <p class="subhead">赛事数据 · 即时信息 · 聚焦竞技本身</p>
+    </div>
+
+    <!-- 站点介绍/可信说明 -->
+    <section>
+        <h2>关于本站</h2>
+        <p><a href="https://apps-shuoqiudi.com" style="color:#3f362f;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#b8a38a;font-weight:600;">说球帝</a> 是一个专注于提供足球与篮球赛事动态、赛果统计及基础信息的聚合平台。站点内容覆盖主要联赛、杯赛及国际赛事，数据来源均整理自公开可查的赛事记录与官方统计渠道。我们力求信息准确、更新及时，但不对因第三方数据波动或延迟导致的偏差承担直接责任。</p>
+
+        <div class="insight-box">
+            <strong>可信说明</strong> —— 平台上展示的比分、赛程、阵容等基础数据，均通过自动化程序从多个可靠信源交叉校验后呈现。每项信息均保留原始发布时间，用户可结合官方渠道进行核对。我们不预测赛果，不提供投注建议，所有内容仅供体育信息参考。
+        </div>
+    </section>
+
+    <!-- 优势区 (特点) -->
+    <section>
+        <h2>平台特点</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>📊 结构化数据</h4>
+                <p>比赛事件、球员统计、历史交锋以列表及图表方式组织，便于快速浏览与对比。</p>
+            </div>
+            <div class="feature-card">
+                <h4>⏱️ 流畅追踪</h4>
+                <p>实时比分与关键事件轮播，减少刷新等待，专注比赛进程本身。</p>
+            </div>
+            <div class="feature-card">
+                <h4>📅 多赛事覆盖</h4>
+                <p>从欧洲五大联赛到中超，从 NBA 到 CBA，主流赛事赛程与结果持续更新。</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔍 轻量界面</h4>
+                <p>去装饰化设计，突出信息层级，降低认知负荷，适配桌面与移动设备。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区 (使用场景 + 引用) -->
+    <section>
+        <h2>使用场景</h2>
+        <p>无论是赛前查阅双方近期走势，还是赛后回顾技术统计，<a href="https://apps-shuoqiudi.com">说球帝</a> 都能提供不带倾向性的数据陈列。适合以下场景：</p>
+        <ul style="padding-left: 1.8rem; margin-bottom: 1.2rem; color: #4d4139;">
+            <li>查看已结束比赛的完整数据报告（控球率、射门数、犯规等）</li>
+            <li>获取未来一周的赛历，规划观赛时间</li>
+            <li>横向比较不同联赛的积分榜与射手榜</li>
+            <li>在移动端快速浏览实时比分，节省流量</li>
+        </ul>
+        <p>注意：部分深度战术分析或视频集锦不属于本站核心功能，建议结合专业媒体获取更全面的内容。</p>
+
+        <div class="insight-box" style="margin-top: 1.2rem;">
+            <strong>使用提示</strong> —— 数据自动更新可能存在短暂延迟，尤其在比赛密集时段。如发现明显异常，可通过站点内反馈通道提交，我们会在下一个更新周期核查修正。
+        </div>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>常见问题 · 摘要</h2>
+        <div class="faq-item">
+            <div class="q">问：数据是否支持导出？</div>
+            <div class="a">目前提供页面级复制和截图，暂未开放批量 API 或 CSV 导出。未来可能根据需求调整。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">问：为什么某场比赛的阵容没有显示？</div>
+            <div class="a">阵容信息通常在开赛前 60–90 分钟才由官方确认并推送。若临场仍缺失，可能是信源未覆盖，建议留意赛后更新。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">问：说球帝与俱乐部或联赛方有合作吗？</div>
+            <div class="a">没有。本平台独立运营，不隶属任何体育组织或博彩公司，所有数据均来自公开渠道，版权归原始权利人所有。</div>
+        </div>
+        <p style="font-size: 0.9rem; color: #7a6f65; margin-top: 0.8rem;">更多问题及详细说明，请直接访问 <a href="https://apps-shuoqiudi.com">说球帝</a> 内页查看。</p>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p><a href="https://apps-shuoqiudi.com">说球帝</a> · 赛事信息参考平台</p>
+        <p class="small-note">数据来源：公开赛事记录 · 内容仅供参考 · 不构成任何决策依据</p>
+    </div>
+
+</div>
+</body>
+</html>
