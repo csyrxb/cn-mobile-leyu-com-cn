@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c7娱乐 · 信息卡片</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8fafc;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 3rem 1.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    /* 主视觉区 */
+    .hero {
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 3rem 2rem 2.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.5rem;
+      border: 1px solid #eef2f6;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0b1120;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 640px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 0.85rem;
+      padding: 0.3rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 450;
+    }
+
+    /* 卡片区 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.8rem 2rem;
+      border: 1px solid #eef2f6;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .info-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .info-card ul {
+      list-style: none;
+      margin-top: 0.6rem;
+    }
+
+    .info-card li {
+      font-size: 0.95rem;
+      color: #475569;
+      padding: 0.25rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .info-card li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    /* 适合人群卡片 */
+    .people-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2rem 2.2rem;
+      border: 1px solid #eef2f6;
+      margin-bottom: 2.5rem;
+    }
+
+    .people-card h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .people-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+    }
+
+    .people-tag {
+      background: #f1f5f9;
+      padding: 0.3rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+
+    /* 自然链接段落 */
+    .link-section {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2rem 2.2rem;
+      border: 1px solid #eef2f6;
+      margin-bottom: 2.5rem;
+    }
+
+    .link-section p {
+      font-size: 1rem;
+      color: #334155;
+      margin-bottom: 1rem;
+    }
+
+    .link-section a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 450;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+      transition: border-color 0.15s;
+    }
+
+    .link-section a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    .link-section .meta-note {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #64748b;
+      background: #f8fafc;
+      padding: 0.2rem 1rem;
+      border-radius: 999px;
+      margin-top: 0.5rem;
+    }
+
+    /* FAQ 摘要 */
+    .faq-teaser {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.8rem 2rem 2rem;
+      border: 1px solid #eef2f6;
+    }
+
+    .faq-teaser h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 0.7rem 0;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 450;
+      color: #1e293b;
+      font-size: 0.95rem;
+    }
+
+    .faq-a {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+    }
+
+    .faq-more {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #64748b;
+      display: inline-block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 2rem 1rem 4rem;
+      }
+
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .info-card {
+        padding: 1.5rem;
+      }
+
+      .people-card,
+      .link-section,
+      .faq-teaser {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+      <h1>c7娱乐 · 日常信息卡</h1>
+      <p>一份轻量的参照页，适合在需要快速对照、延伸阅读或整理思路时打开。内容围绕常见使用场景、人群与实用提示展开，保持简洁。</p>
+      <span class="hero-tag">信息卡片式 · 温和查阅</span>
+    </div>
+
+    <!-- 用途卡片 x4 -->
+    <div class="card-grid">
+      <div class="info-card">
+        <h3>📋 对照查询</h3>
+        <p>当需要核对某项功能、规则或服务细节时，可作为辅助参考。条目清晰，便于逐项对照。</p>
+      </div>
+      <div class="info-card">
+        <h3>🗂️ 场景速览</h3>
+        <p>从日常使用出发，归纳典型场景：快速检索、内容预览、分类筛选等，节省反复翻找的时间。</p>
+      </div>
+      <div class="info-card">
+        <h3>📎 延伸阅读</h3>
+        <p>围绕常见话题提供背景说明、关联概念与实用链接，方便进一步了解而不偏离主线。</p>
+      </div>
+      <div class="info-card">
+        <h3>📌 备忘提醒</h3>
+        <p>收集容易被忽略的小提示，比如界面习惯、操作节奏、信息更新频次等，减少遗漏。</p>
+      </div>
+    </div>
+
+    <!-- 适合人群 -->
+    <div class="people-card">
+      <h2>适合这样的人群</h2>
+      <div class="people-tags">
+        <span class="people-tag">日常使用者</span>
+        <span class="people-tag">信息整理爱好者</span>
+        <span class="people-tag">轻度参考需求</span>
+        <span class="people-tag">习惯先浏览后决策</span>
+        <span class="people-tag">偏好干净界面</span>
+        <span class="people-tag">场景化阅读</span>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 -->
+    <div class="link-section">
+      <p>
+        如果你希望直接访问服务主页，这里提供一条简洁路径：<a href="https://cn1-c7entertainment.com">c7娱乐</a>。页面设计以信息密度适中、加载流畅为特点，适合作为日常查询或对照延伸的起点。
+      </p>
+      <p>
+        本页是一份静态参考卡片，不记录任何操作偏好。保持轻量、可打印、方便快速定位，是它存在的理由。内容会不定期微调，以匹配常见问题与反馈。
+      </p>
+      <span class="meta-note">更新于最近一次整理</span>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-teaser">
+      <h2>你可能留意到的几点</h2>
+      <div class="faq-item">
+        <div class="faq-q">卡片里的信息会频繁变化吗？</div>
+        <div class="faq-a">不会。本页定位为稳定参照，仅在有必要时做小幅增补。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">能否直接复制卡片内容用于笔记？</div>
+        <div class="faq-a">完全可以。所有文字均可选中复制，无需额外权限。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">为什么没有更详细的分类？</div>
+        <div class="faq-a">为了保持卡片易读性，更细的内容建议通过主站搜索或目录查找。</div>
+      </div>
+      <span class="faq-more">以上为摘要，完整FAQ可至对应页面查阅。</span>
+    </div>
+
+  </div>
+</body>
+</html>
